@@ -27,7 +27,14 @@
             100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
         }
         #mobile-menu.hidden { display: none; }
-        img { background-color: #f1f5f9; min-height: 40px; transition: transform 0.3s; border-radius: 12px; }
+        img { 
+            background-color: #f1f5f9; 
+            border-radius: 12px; 
+            width: 250px; 
+            height: 200px; 
+            object-fit: cover; 
+            transition: transform 0.3s;
+        }
         img:hover { transform: scale(1.02); }
         
         .ai-chat-window, .quiz-modal {
@@ -82,11 +89,10 @@
         </div>
     </nav>
 
-    <!-- [IMAGE] Heading Intro: images/banner_intro.jpg -->
+    <!-- Intro Section -->
     <section id="intro" class="pt-40 pb-20 px-4">
         <div class="max-w-7xl mx-auto text-center">
             <div class="mb-16">
-                <img src="images/banner_intro.jpg" alt="[Hình ảnh Banner giới thiệu DMS]" class="w-full max-w-4xl mx-auto rounded-[40px] mb-12 shadow-xl border border-slate-100">
                 <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">Hướng dẫn sử dụng <span class="text-green-600 italic">DMS hiệu quả</span></h1>
                 <div class="flex flex-col items-center gap-4">
                     <p class="text-slate-500 text-lg max-w-2xl mx-auto italic">Nghiệp vụ chuẩn xác - Doanh số bứt phá</p>
@@ -99,32 +105,26 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-                <!-- Nhóm 1: Sale -->
                 <div class="bg-white p-8 rounded-[40px] border border-slate-100 shadow-sm flex flex-col items-center">
-                    <img src="images/role_sale.png" alt="[Icon Sale]" class="w-20 h-20 mb-6">
                     <h3 class="font-bold text-slate-800 text-lg mb-4 uppercase">Sale (NVBH)</h3>
-                    <ul class="text-[11px] text-slate-500 space-y-3 text-left w-full italic">
+                    <ul class="text-[11px] text-slate-500 space-y-3 text-left w-full italic leading-relaxed">
                         <li>- Sử dụng trong suốt quá trình làm việc.</li>
                         <li>- Đăng nhập đúng giờ, thăm đúng tuyến hàng ngày.</li>
                         <li>- Khởi tạo chính xác thông tin khách hàng mới.</li>
                         <li>- Chịu trách nhiệm về thiết bị làm việc.</li>
                     </ul>
                 </div>
-                <!-- Nhóm 2: TNBH -->
                 <div class="bg-white p-8 rounded-[40px] border border-slate-100 shadow-sm flex flex-col items-center">
-                    <img src="images/role_supervisor.png" alt="[Icon TNBH]" class="w-20 h-20 mb-6">
                     <h3 class="font-bold text-slate-800 text-lg mb-4 uppercase">Trưởng nhóm (TNBH)</h3>
-                    <ul class="text-[11px] text-slate-500 space-y-3 text-left w-full italic">
+                    <ul class="text-[11px] text-slate-500 space-y-3 text-left w-full italic leading-relaxed">
                         <li>- Thiết lập tuyến và giao mục tiêu.</li>
                         <li>- Duyệt KH mới/Đơn hàng trong tối đa 48h.</li>
                         <li>- Kiểm tra báo cáo DMS, xử lý dữ liệu trùng.</li>
                     </ul>
                 </div>
-                <!-- Nhóm 3: TP. GT -->
                 <div class="bg-white p-8 rounded-[40px] border border-slate-100 shadow-sm flex flex-col items-center">
-                    <img src="images/role_manager.png" alt="[Icon TP.GT]" class="w-20 h-20 mb-6">
                     <h3 class="font-bold text-slate-800 text-lg mb-4 uppercase">Trưởng phòng GT (TP.GT)</h3>
-                    <ul class="text-[11px] text-slate-500 space-y-3 text-left w-full italic">
+                    <ul class="text-[11px] text-slate-500 space-y-3 text-left w-full italic leading-relaxed">
                         <li>- Kiểm tra công việc của NVBH và TNBH.</li>
                         <li>- Làm thay TNBH nếu trống nhân sự khu vực.</li>
                         <li>- Báo cáo hoạt động và kế hoạch cho TGĐ.</li>
@@ -143,30 +143,28 @@
                 <button onclick="switchTab('ios')" id="btn-ios" class="px-8 py-3 rounded-xl font-bold text-sm transition-all text-slate-400">iOS (IPHONE)</button>
             </div>
 
-            <!-- Android Steps -->
             <div id="android" class="tab-content active text-left">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div class="space-y-6 text-sm">
                         <p><span class="font-bold text-green-400">Bước 1:</span> Truy cập <b>dms.mobiwork.vn</b></p>
-                        <img src="Screenshot 2026-04-03 at 16.24.27.jpg" alt="[Hình ảnh Android bước 1]" class="max-w-[280px]">
+                        <img src="Screenshot 2026-04-03 at 16.24.27.jpg" alt="[Hình ảnh Android bước 1]">
                         <p><span class="font-bold text-green-400">Bước 2:</span> Chọn tải từ <b>Google Play</b></p>
                         <p><span class="font-bold text-green-400">Bước 3:</span> Tìm đến Trình quản lý tệp hoặc Lưu trữ file</p>
                         <p><span class="font-bold text-green-400">Bước 4:</span> Vào phần <b>APK</b></p>
-                        <img src="Screenshot 2026-04-03 at 16.24.46.jpg" alt="[Hình ảnh Android bước 4]" class="max-w-[280px]">
+                        <img src="Screenshot 2026-04-03 at 16.24.46.jpg" alt="[Hình ảnh Android bước 4]">
                         <p><span class="font-bold text-green-400">Bước 5:</span> Mở file <b>MBW_DMS.apk</b> -> Chọn Cài đặt</p>
                     </div>
-                    <div class="bg-slate-800 p-8 rounded-[40px] border border-slate-700 italic text-slate-400 text-xs">
+                    <div class="bg-slate-800 p-8 rounded-[40px] border border-slate-700 italic text-slate-400 text-xs h-fit">
                         Lưu ý: NVBH tự trang bị thiết bị tốt (Android 8.0 trở lên).
                     </div>
                 </div>
             </div>
 
-            <!-- iOS Steps -->
             <div id="ios" class="tab-content text-left">
                 <div class="space-y-6 text-sm">
                     <p><span class="font-bold text-blue-400">Bước 1:</span> Vào <b>Safari</b></p>
                     <p><span class="font-bold text-blue-400">Bước 2:</span> Truy cập <b>dms.mobiwork.vn</b></p>
-                    <img src="Screenshot 2026-04-03 at 16.25.04.jpg" alt="[Hình ảnh iOS bước 2]" class="max-w-[280px]">
+                    <img src="Screenshot 2026-04-03 at 16.25.04.jpg" alt="[Hình ảnh iOS bước 2]">
                     <p><span class="font-bold text-blue-400">Bước 3:</span> Bấm "Tải từ App Store" -> 4. Bấm Cài đặt.</p>
                     <p><span class="font-bold text-blue-400 italic">Bước 5: Xác minh ứng dụng:</span></p>
                     <div class="pl-4 border-l border-slate-700 py-2 space-y-1 opacity-80 italic">
@@ -174,9 +172,9 @@
                         <p>Chọn "MOBIWORK VIETNAM TECHNOLOGY..."</p>
                         <p>Nhấn "Tin cậy".</p>
                     </div>
-                    <div class="flex gap-4">
-                        <img src="Screenshot 2026-04-03 at 16.25.14.jpg" alt="[Hình ảnh iOS xác minh 1]" class="h-48">
-                        <img src="Screenshot 2026-04-03 at 16.25.22.jpg" alt="[Hình ảnh iOS xác minh 2]" class="h-48">
+                    <div class="flex flex-wrap gap-4">
+                        <img src="Screenshot 2026-04-03 at 16.25.14.jpg" alt="[Hình ảnh iOS xác minh 1]">
+                        <img src="Screenshot 2026-04-03 at 16.25.22.jpg" alt="[Hình ảnh iOS xác minh 2]">
                     </div>
                 </div>
             </div>
@@ -196,8 +194,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <!-- [IMAGE] Login UI: images/login_ui.jpg -->
-                    <img src="images/login_ui.jpg" alt="[Hình minh họa giao diện Đăng nhập]" class="rounded-3xl shadow-lg mx-auto max-w-sm border border-slate-100">
+                    <img src="login-ui.jpg" alt="[Hình minh họa giao diện Đăng nhập]" class="shadow-lg mx-auto">
                 </div>
             </div>
         </div>
@@ -207,18 +204,16 @@
     <section id="timekeep" class="py-24 bg-slate-50 px-4">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-3xl font-black text-center mb-16 uppercase italic">CHẤM CÔNG TRÊN DMS</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="bg-white p-10 rounded-[48px] shadow-sm border border-green-100">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-center md:text-left">
+                <div class="bg-white p-10 rounded-[48px] shadow-sm border border-green-100 flex flex-col items-center md:items-start">
                     <h3 class="font-bold text-green-700 mb-6 uppercase italic underline">Check-in (08:00)</h3>
                     <p class="text-xs text-slate-500 mb-4 italic">Trang chủ -> Chấm công -> BẮT ĐẦU.</p>
-                    <!-- [IMAGE] Checkin UI: images/checkin_screen.jpg -->
-                    <img src="images/checkin_screen.jpg" alt="[Hình ảnh thao tác Check-in]" class="w-full border rounded-xl">
+                    <img src="checkin-ui.jpg" alt="[Hình ảnh thao tác Check-in]" class="border">
                 </div>
-                <div class="bg-white p-10 rounded-[48px] shadow-sm border border-red-100">
+                <div class="bg-white p-10 rounded-[48px] shadow-sm border border-red-100 flex flex-col items-center md:items-start">
                     <h3 class="font-bold text-red-700 mb-6 uppercase italic underline">Check-out (17:00)</h3>
                     <p class="text-xs text-slate-500 mb-4 italic">Màn hình Chấm công -> KẾT THÚC.</p>
-                    <!-- [IMAGE] Checkout UI: images/checkout_screen.jpg -->
-                    <img src="images/checkout_screen.jpg" alt="[Hình ảnh thao tác Check-out]" class="w-full border rounded-xl">
+                    <img src="checkout-ui.jpg" alt="[Hình ảnh thao tác Check-out]" class="border">
                 </div>
             </div>
             <div class="mt-12 p-8 bg-slate-900 text-white rounded-[40px] text-center italic text-sm">
@@ -237,28 +232,23 @@
                     <div class="space-y-8 text-sm italic">
                         <div class="space-y-4">
                             <p><b>B1:</b> Viếng thăm -> Cài đặt (⚙️) -> Thêm khách hàng.</p>
-                            <!-- [IMAGE] Create Customer Step 1: images/customer_step1.jpg -->
-                            <img src="images/customer_step1.jpg" alt="[Hình ảnh bước 1 tạo KH]" class="border shadow-sm max-w-[250px]">
+                            <img src="customer-1.jpg" alt="[Hình ảnh bước 1 tạo KH]" class="border shadow-sm">
                         </div>
                         <div class="space-y-4">
                             <p><b>B2:</b> Điền thông tin & Chụp ảnh trong/ngoài cửa hàng.</p>
-                            <!-- [IMAGE] Create Customer Step 2: images/customer_step2.jpg -->
-                            <img src="images/customer_step2.jpg" alt="[Hình ảnh bước 2 tạo KH]" class="border shadow-sm max-w-[250px]">
+                            <img src="customer-2.jpg" alt="[Hình ảnh bước 2 tạo KH]" class="border shadow-sm">
                         </div>
                         <div class="space-y-4">
                             <p><b>B3:</b> Tab Vị trí -> Lấy địa chỉ -> Lưu vị trí.</p>
-                            <!-- [IMAGE] Create Customer Step 3: images/customer_step3.jpg -->
-                            <img src="images/customer_step3.jpg" alt="[Hình ảnh bước 3 tạo KH]" class="border shadow-sm max-w-[250px]">
+                            <img src="customer-3.jpg" alt="[Hình ảnh bước 3 tạo KH]" class="border shadow-sm">
                         </div>
                         <div class="space-y-4">
                             <p><b>B4:</b> Tab Tuyến -> Gán tuyến -> Lưu.</p>
-                            <!-- [IMAGE] Create Customer Step 4: images/customer_step4.jpg -->
-                            <img src="images/customer_step4.jpg" alt="[Hình ảnh bước 4 tạo KH]" class="border shadow-sm max-w-[250px]">
+                            <img src="customer-4.jpg" alt="[Hình ảnh bước 4 tạo KH]" class="border shadow-sm">
                         </div>
                         <div class="space-y-4">
                             <p><b>B5:</b> Cài đặt -> <b>Đồng bộ dữ liệu</b>.</p>
-                            <!-- [IMAGE] Create Customer Step 5: images/customer_step5.jpg -->
-                            <img src="images/customer_step5.jpg" alt="[Hình ảnh bước 5 tạo KH]" class="border shadow-sm max-w-[250px]">
+                            <img src="customer-5.jpg" alt="[Hình ảnh bước 5 tạo KH]" class="border shadow-sm">
                         </div>
                     </div>
                 </div>
@@ -290,37 +280,32 @@
                             <li>- Lên đơn hàng</li>
                             <li>- Ghi nhận vấn đề khách hàng</li>
                         </ul>
-                        <!-- [IMAGE] Visit Purpose: images/visit_purpose.jpg -->
-                        <img src="images/visit_purpose.jpg" alt="[Hình ảnh mục đích viếng thăm]" class="mt-6 border border-slate-700 shadow-xl">
+                        <img src="visit-purpose.jpg" alt="[Hình ảnh mục đích viếng thăm]" class="mt-6 border border-slate-700 shadow-xl">
                     </div>
                     <div>
                         <h3 class="text-xl font-bold mb-6 text-blue-400 uppercase italic">2. Hướng dẫn thao tác</h3>
                         <p class="text-sm italic mb-6">Sử dụng "Phễu" lọc hoặc "Công cụ" sắp xếp khoảng cách. Bấm <b>Checkin</b>.</p>
-                        <!-- [IMAGE] Visit Filter: images/visit_tools.jpg -->
-                        <img src="images/visit_tools.jpg" alt="[Hình ảnh công cụ lọc]" class="max-w-[250px] border border-slate-700">
+                        <img src="visit-tools.jpg" alt="[Hình ảnh công cụ lọc]" class="border border-slate-700">
                     </div>
                 </div>
                 <div class="space-y-12">
-                    <div class="bg-white text-slate-900 p-8 rounded-[48px] shadow-xl italic">
+                    <div class="bg-white text-slate-900 p-8 rounded-[48px] shadow-xl italic flex flex-col items-center md:items-start">
                         <h4 class="font-black text-red-600 uppercase mb-4 italic text-sm">Trường hợp KH ĐÓNG CỬA</h4>
                         <p class="text-xs mb-4">Chế độ "Đóng cửa" -> Tab "Hình ảnh" -> Chụp hiện trạng cửa đóng -> Check-out.</p>
-                        <!-- [IMAGE] Closed Scenario: images/visit_closed_ui.jpg -->
-                        <img src="images/visit_closed_ui.jpg" alt="[Hình ảnh thao tác KH đóng cửa]" class="border">
+                        <img src="visit-closed.jpg" alt="[Hình ảnh thao tác KH đóng cửa]" class="border">
                     </div>
                     <div class="bg-white text-slate-900 p-8 rounded-[48px] shadow-xl italic leading-relaxed">
                         <h4 class="font-black text-green-700 uppercase mb-4 italic text-sm">Trường hợp KH MỞ CỬA</h4>
                         <ul class="text-xs space-y-6">
-                            <li>
+                            <li class="flex flex-col items-center md:items-start">
                                 <b>- Kiểm tồn:</b> Thêm SP -> Điền SL -> Lưu.
-                                <!-- [IMAGE] Stock Count UI: images/visit_stock.jpg -->
-                                <img src="images/visit_stock.jpg" alt="[Hình ảnh kiểm tồn]" class="h-20 mt-2 border">
+                                <img src="visit-stock.jpg" alt="[Hình ảnh kiểm tồn]" class="mt-2 border">
                             </li>
                             <li><b>- Chụp ảnh:</b> Tab Hình ảnh -> Chụp trưng bày -> Lưu.</li>
                             <li><b>- Ghi chú:</b> Cây bút -> Tab "Thêm mới" -> Gửi.</li>
-                            <li>
+                            <li class="flex flex-col items-center md:items-start">
                                 <b>- Đặt hàng:</b> Đặt hàng -> Thêm SP -> Điền SL.
-                                <!-- [IMAGE] Ordering UI: images/visit_order.jpg -->
-                                <img src="images/visit_order.jpg" alt="[Hình ảnh đơn hàng]" class="h-20 mt-2 border">
+                                <img src="visit-order.jpg" alt="[Hình ảnh đơn hàng]" class="mt-2 border">
                             </li>
                             <li><b>- Khuyến mãi:</b> Nút Khuyến mãi -> Chọn SP & SL KM -> Cập nhật.</li>
                         </ul>
@@ -329,8 +314,7 @@
             </div>
             <div class="mt-12 p-10 bg-orange-600 rounded-[48px] text-white text-center italic">
                 <p class="text-sm font-bold">Thăm đúng tuyến phân bổ. Thao tác xong bắt buộc bấm <b>Đồng bộ dữ liệu</b>.</p>
-                <!-- [IMAGE] Sync Icon: images/sync_visit.jpg -->
-                <img src="images/sync_visit.jpg" alt="[Hình ảnh biểu tượng đồng bộ]" class="mx-auto mt-6 h-16 shadow-lg">
+                <img src="sync-icon.jpg" alt="[Hình ảnh biểu tượng đồng bộ]" class="mx-auto mt-6 shadow-lg">
             </div>
         </div>
     </section>
@@ -338,7 +322,7 @@
     <!-- FINISH BUTTON & QUIZ -->
     <section class="py-24 bg-white text-center">
         <div class="max-w-2xl mx-auto px-4">
-            <h3 class="text-2xl font-black mb-8 uppercase italic italic">Sẵn sàng để hoàn thành khóa học?</h3>
+            <h3 class="text-2xl font-black mb-8 uppercase italic">Sẵn sàng để hoàn thành khóa học?</h3>
             <button onclick="startQuiz()" class="bg-slate-900 text-white px-12 py-5 rounded-full font-black text-lg shadow-2xl hover:scale-105 transition active:scale-95 uppercase tracking-widest">
                 HOÀN THÀNH KHOÁ HỌC
             </button>
@@ -410,7 +394,6 @@
             document.getElementById('btn-ios').className = "px-8 py-3 rounded-xl font-bold text-sm transition-all " + (os === 'ios' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-400');
         }
 
-        // QUIZ DATA & LOGIC
         const questionBank = [
             { q: "NVBH cần Check-in vào thời gian nào?", a: ["07:30", "08:00", "08:30", "09:00"], c: 1, lv: "Biết" },
             { q: "NVBH được khởi tạo tối đa bao nhiêu lần cho 1 KH mới?", a: ["01 lần", "02 lần", "Vô hạn", "03 lần"], c: 0, lv: "Biết" },
@@ -429,7 +412,7 @@
             { q: "Nếu địa chỉ tự động sai, NVBH phải làm gì?", a: ["Để im", "Chỉnh tay đầy đủ số nhà, đường, phường...", "Xóa KH", "Ghi chú lại"], c: 1, lv: "Áp dụng" },
             { q: "Thao tác Lên đơn hàng (Sales Order) là bước thứ mấy?", a: ["Bước 1", "Bước 3", "Bước 5", "Bước 7"], c: 2, lv: "Biết" },
             { q: "Khi viếng thăm khách mở cửa, bước ghi tồn gọi là?", a: ["Checkin", "Stock count", "Checkout", "Order"], c: 1, lv: "Biết" },
-            { q: "NVBH muốn đổi tuyến bán hàng phải báo cáo với ai?", a: ["Không cần báo", "TP. GT", "TNBH (Quản lý trực tiếp)", "Đồng nghiệp"], c: 2, lv: "Áp dụng" },
+            { q: "NVBH muốn đổi tuyến bán hàng phải báo cáo with ai?", a: ["Không cần báo", "TP. GT", "TNBH (Quản lý trực tiếp)", "Đồng nghiệp"], c: 2, lv: "Áp dụng" },
             { q: "Hệ thống ghi nhận chấm công kèm yếu tố nào sau?", a: ["Vị trí/Tọa độ thực tế", "Giọng nói", "QR Code", "Vân tay"], c: 0, lv: "Hiểu" },
             { q: "Ba trường bổ sung bắt buộc bao gồm nguồn lấy hàng từ?", a: ["NPP hoặc Công ty", "Siêu thị", "Chợ", "Nước ngoài"], c: 0, lv: "Biết" }
         ];
@@ -471,7 +454,6 @@
 
         function closeQuiz() { document.getElementById('quiz-modal').classList.remove('quiz-active'); }
 
-        // AI CALLS
         async function callGemini(prompt, systemPrompt = "") {
             const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
             try {
