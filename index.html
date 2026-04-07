@@ -27,19 +27,7 @@
             100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
         }
         #mobile-menu.hidden { display: none; }
-        
-        /* Cấu hình kích thước ảnh tự do, giữ tỉ lệ gốc */
-        img { 
-            background-color: #f1f5f9; 
-            border-radius: 12px; 
-            max-width: 100%; 
-            height: auto;    
-            transition: transform 0.3s;
-            margin-top: 0.75rem;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            display: block;
-        }
+        img { background-color: #f1f5f9; min-height: 40px; transition: transform 0.3s; border-radius: 12px; }
         img:hover { transform: scale(1.02); }
         
         .ai-chat-window, .quiz-modal {
@@ -84,7 +72,7 @@
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 py-6 space-y-4 shadow-xl font-bold uppercase text-[10px] tracking-widest text-center text-center">
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 py-6 space-y-4 shadow-xl font-bold uppercase text-[10px] tracking-widest">
             <a href="#intro" onclick="toggleMobileMenu()" class="block p-2">Giới thiệu</a>
             <a href="#install" onclick="toggleMobileMenu()" class="block p-2">Cài đặt</a>
             <a href="#login" onclick="toggleMobileMenu()" class="block p-2">Đăng nhập</a>
@@ -94,42 +82,49 @@
         </div>
     </nav>
 
-    <!-- Intro Section -->
-    <section id="intro" class="pt-40 pb-20 px-4 text-center">
-        <div class="max-w-7xl mx-auto">
+    <!-- [IMAGE] Heading Intro: images/banner_intro.jpg -->
+    <section id="intro" class="pt-40 pb-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
             <div class="mb-16">
+                <img src="images/banner_intro.jpg" alt="[Hình ảnh Banner giới thiệu DMS]" class="w-full max-w-4xl mx-auto rounded-[40px] mb-12 shadow-xl border border-slate-100">
                 <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">Hướng dẫn sử dụng <span class="text-green-600 italic">DMS hiệu quả</span></h1>
                 <div class="flex flex-col items-center gap-4">
-                    <p class="text-slate-500 text-lg max-w-2xl mx-auto italic text-center text-center">Nghiệp vụ chuẩn xác - Doanh số bứt phá</p>
-                    <button onclick="generateSummary()" id="summary-btn" class="flex items-center gap-2 bg-gradient-to-r from-green-600 to-emerald-500 text-white px-6 py-3 rounded-2xl font-bold text-sm shadow-lg hover:shadow-green-200 transition active:scale-95 mx-auto text-center">
+                    <p class="text-slate-500 text-lg max-w-2xl mx-auto italic">Nghiệp vụ chuẩn xác - Doanh số bứt phá</p>
+                    <button onclick="generateSummary()" id="summary-btn" class="flex items-center gap-2 bg-gradient-to-r from-green-600 to-emerald-500 text-white px-6 py-3 rounded-2xl font-bold text-sm shadow-lg hover:shadow-green-200 transition active:scale-95">
                         <i data-lucide="sparkles" class="w-4 h-4"></i>
                         <span>Tóm tắt bài học nhanh ✨</span>
                     </button>
-                    <div id="summary-result" class="hidden max-w-2xl bg-white p-6 rounded-3xl border border-green-100 text-left mt-4 text-sm text-slate-600 leading-relaxed shadow-sm mx-auto text-center"></div>
+                    <div id="summary-result" class="hidden max-w-2xl bg-white p-6 rounded-3xl border border-green-100 text-left mt-4 text-sm text-slate-600 leading-relaxed shadow-sm"></div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 text-center text-center">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+                <!-- Nhóm 1: Sale -->
                 <div class="bg-white p-8 rounded-[40px] border border-slate-100 shadow-sm flex flex-col items-center">
+                    <img src="images/role_sale.png" alt="[Icon Sale]" class="w-20 h-20 mb-6">
                     <h3 class="font-bold text-slate-800 text-lg mb-4 uppercase">Sale (NVBH)</h3>
-                    <ul class="text-[11px] text-slate-500 space-y-3 text-left w-full italic leading-relaxed text-center">
+                    <ul class="text-[11px] text-slate-500 space-y-3 text-left w-full italic">
                         <li>- Sử dụng trong suốt quá trình làm việc.</li>
                         <li>- Đăng nhập đúng giờ, thăm đúng tuyến hàng ngày.</li>
                         <li>- Khởi tạo chính xác thông tin khách hàng mới.</li>
                         <li>- Chịu trách nhiệm về thiết bị làm việc.</li>
                     </ul>
                 </div>
-                <div class="bg-white p-8 rounded-[40px] border border-slate-100 shadow-sm flex flex-col items-center text-center text-center">
-                    <h3 class="font-bold text-slate-800 text-lg mb-4 uppercase text-center text-center">Trưởng nhóm (TNBH)</h3>
-                    <ul class="text-[11px] text-slate-500 space-y-3 text-left w-full italic leading-relaxed text-center">
+                <!-- Nhóm 2: TNBH -->
+                <div class="bg-white p-8 rounded-[40px] border border-slate-100 shadow-sm flex flex-col items-center">
+                    <img src="images/role_supervisor.png" alt="[Icon TNBH]" class="w-20 h-20 mb-6">
+                    <h3 class="font-bold text-slate-800 text-lg mb-4 uppercase">Trưởng nhóm (TNBH)</h3>
+                    <ul class="text-[11px] text-slate-500 space-y-3 text-left w-full italic">
                         <li>- Thiết lập tuyến và giao mục tiêu.</li>
                         <li>- Duyệt KH mới/Đơn hàng trong tối đa 48h.</li>
                         <li>- Kiểm tra báo cáo DMS, xử lý dữ liệu trùng.</li>
                     </ul>
                 </div>
+                <!-- Nhóm 3: TP. GT -->
                 <div class="bg-white p-8 rounded-[40px] border border-slate-100 shadow-sm flex flex-col items-center">
-                    <h3 class="font-bold text-slate-800 text-lg mb-4 uppercase text-center text-center">Trưởng phòng GT (TP.GT)</h3>
-                    <ul class="text-[11px] text-slate-500 space-y-3 text-left w-full italic leading-relaxed text-center">
+                    <img src="images/role_manager.png" alt="[Icon TP.GT]" class="w-20 h-20 mb-6">
+                    <h3 class="font-bold text-slate-800 text-lg mb-4 uppercase">Trưởng phòng GT (TP.GT)</h3>
+                    <ul class="text-[11px] text-slate-500 space-y-3 text-left w-full italic">
                         <li>- Kiểm tra công việc của NVBH và TNBH.</li>
                         <li>- Làm thay TNBH nếu trống nhân sự khu vực.</li>
                         <li>- Báo cáo hoạt động và kế hoạch cho TGĐ.</li>
@@ -142,57 +137,46 @@
     <!-- CÀI ĐẶT -->
     <section id="install" class="py-24 bg-slate-900 text-white text-center">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-black mb-12 uppercase italic tracking-widest text-center text-center text-center">CÀI ĐẶT</h2>
-            <div class="inline-flex p-1 bg-slate-800 rounded-2xl mb-16 mx-auto text-center">
+            <h2 class="text-3xl font-black mb-12 uppercase italic tracking-widest">CÀI ĐẶT</h2>
+            <div class="inline-flex p-1 bg-slate-800 rounded-2xl mb-16">
                 <button onclick="switchTab('android')" id="btn-android" class="px-8 py-3 rounded-xl font-bold text-sm transition-all bg-green-600 text-white shadow-lg">ANDROID</button>
                 <button onclick="switchTab('ios')" id="btn-ios" class="px-8 py-3 rounded-xl font-bold text-sm transition-all text-slate-400">iOS (IPHONE)</button>
             </div>
 
+            <!-- Android Steps -->
             <div id="android" class="tab-content active text-left">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-center md:text-left">
-                    <div class="space-y-8 text-sm text-center md:text-left text-center md:text-left">
-                        <div>
-                            <p class="mb-2"><span class="font-bold text-green-400">Bước 1:</span> Truy cập <b>dms.mobiwork.vn</b></p>
-                            <img src="Screenshot 2026-04-03 at 16.24.27.png" alt="Android Step 1" class="max-w-xl mx-auto md:mx-0">
-                        </div>
-                        <div class="space-y-4">
-                            <p><span class="font-bold text-green-400">Bước 2:</span> Chọn tải từ <b>Google Play</b></p>
-                            <p><span class="font-bold text-green-400">Bước 3:</span> Tìm đến Trình quản lý tệp hoặc Lưu trữ file</p>
-                            <div class="space-y-4">
-                                <p><span class="font-bold text-green-400">Bước 4:</span> Vào phần <b>APK</b></p>
-                                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                                    <img src="Screenshot 2026-04-03 at 16.24.46.png" alt="Android Step 4 - Image 1" class="max-w-md">
-                                    <img src="install_android_step4_alt.png" alt="Android Step 4 - Image 2" class="max-w-md">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="space-y-4">
-                            <p><span class="font-bold text-green-400">Bước 5:</span> Mở tệp <b>MBW_DMS.apk</b> -> Chọn Cài đặt</p>
-                            <img src="install_android_step5.png" alt="Android Step 5" class="max-w-md mx-auto md:mx-0">
-                        </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="space-y-6 text-sm">
+                        <p><span class="font-bold text-green-400">Bước 1:</span> Truy cập <b>dms.mobiwork.vn</b></p>
+                        <img src="Screenshot 2026-04-03 at 16.24.27.jpg" alt="[Hình ảnh Android bước 1]" class="max-w-[280px]">
+                        <p><span class="font-bold text-green-400">Bước 2:</span> Chọn tải từ <b>Google Play</b></p>
+                        <p><span class="font-bold text-green-400">Bước 3:</span> Tìm đến Trình quản lý tệp hoặc Lưu trữ file</p>
+                        <p><span class="font-bold text-green-400">Bước 4:</span> Vào phần <b>APK</b></p>
+                        <img src="Screenshot 2026-04-03 at 16.24.46.jpg" alt="[Hình ảnh Android bước 4]" class="max-w-[280px]">
+                        <p><span class="font-bold text-green-400">Bước 5:</span> Mở file <b>MBW_DMS.apk</b> -> Chọn Cài đặt</p>
+                    </div>
+                    <div class="bg-slate-800 p-8 rounded-[40px] border border-slate-700 italic text-slate-400 text-xs">
+                        Lưu ý: NVBH tự trang bị thiết bị tốt (Android 8.0 trở lên).
                     </div>
                 </div>
             </div>
 
+            <!-- iOS Steps -->
             <div id="ios" class="tab-content text-left">
-                <div class="space-y-8 text-sm text-center md:text-left text-center md:text-left text-center md:text-left">
-                    <div>
-                        <p class="mb-2"><span class="font-bold text-blue-400">Bước 1:</span> Vào <b>Safari</b></p>
-                        <p class="mb-2"><span class="font-bold text-blue-400">Bước 2:</span> Truy cập <b>dms.mobiwork.vn</b></p>
-                        <img src="Screenshot 2026-04-03 at 16.25.04.png" alt="iOS Step 2" class="max-w-xl mx-auto md:mx-0">
-                    </div>
+                <div class="space-y-6 text-sm">
+                    <p><span class="font-bold text-blue-400">Bước 1:</span> Vào <b>Safari</b></p>
+                    <p><span class="font-bold text-blue-400">Bước 2:</span> Truy cập <b>dms.mobiwork.vn</b></p>
+                    <img src="Screenshot 2026-04-03 at 16.25.04.jpg" alt="[Hình ảnh iOS bước 2]" class="max-w-[280px]">
                     <p><span class="font-bold text-blue-400">Bước 3:</span> Bấm "Tải từ App Store" -> 4. Bấm Cài đặt.</p>
-                    <div>
-                        <p class="mb-2"><span class="font-bold text-blue-400 italic">Bước 5: Xác minh ứng dụng:</span></p>
-                        <div class="pl-4 border-l border-slate-700 py-2 space-y-1 opacity-80 italic mb-4">
-                            <p>Cài đặt -> Cài đặt chung -> Quản lý thiết bị</p>
-                            <p>Chọn "MOBIWORK VIETNAM TECHNOLOGY..."</p>
-                            <p>Nhấn "Tin cậy".</p>
-                        </div>
-                        <div class="flex flex-wrap gap-6 justify-center md:justify-start">
-                            <img src="Screenshot 2026-04-03 at 16.25.14.png" alt="iOS Verify 1" class="max-w-sm">
-                            <img src="Screenshot 2026-04-03 at 16.25.22.png" alt="iOS Verify 2" class="max-w-sm">
-                        </div>
+                    <p><span class="font-bold text-blue-400 italic">Bước 5: Xác minh ứng dụng:</span></p>
+                    <div class="pl-4 border-l border-slate-700 py-2 space-y-1 opacity-80 italic">
+                        <p>Cài đặt -> Cài đặt chung -> Quản lý thiết bị</p>
+                        <p>Chọn "MOBIWORK VIETNAM TECHNOLOGY..."</p>
+                        <p>Nhấn "Tin cậy".</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <img src="Screenshot 2026-04-03 at 16.25.14.jpg" alt="[Hình ảnh iOS xác minh 1]" class="h-48">
+                        <img src="Screenshot 2026-04-03 at 16.25.22.jpg" alt="[Hình ảnh iOS xác minh 2]" class="h-48">
                     </div>
                 </div>
             </div>
@@ -201,219 +185,214 @@
 
     <!-- ĐĂNG NHẬP -->
     <section id="login" class="py-24 bg-white px-4">
-        <div class="max-w-5xl mx-auto text-center md:text-left text-center md:text-left">
-            <h2 class="text-3xl font-black text-center mb-16 uppercase italic text-center text-center">ĐĂNG NHẬP</h2>
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-black text-center mb-16 uppercase italic">ĐĂNG NHẬP</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-8 text-center md:text-left text-center md:text-left text-center md:text-left">
-                    <p class="text-slate-600 italic leading-relaxed text-center md:text-left text-center md:text-left text-center md:text-left">NVBH mới sẽ được quản lý trực tiếp cung cấp thông tin tài khoản và mật khẩu để đăng nhập.</p>
+                <div class="space-y-8">
+                    <p class="text-slate-600 italic leading-relaxed">NVBH mới sẽ được quản lý trực tiếp cung cấp thông tin tài khoản và mật khẩu để đăng nhập.</p>
                     <div class="bg-orange-50 border-l-8 border-orange-500 p-8 rounded-r-3xl shadow-md">
-                        <h4 class="font-black text-orange-700 uppercase italic mb-6 flex items-center justify-center md:justify-start gap-2 tracking-tighter text-center md:text-left"><i data-lucide="alert-circle"></i> Lưu ý quan trọng</h4>
-                        <p class="text-sm font-semibold text-orange-900 italic leading-loose text-center md:text-left text-center md:text-left text-center md:text-left">Bật GPS, bật 3G/4G/Wifi ổn định. Sau mỗi thao tác công việc hãy bấm "Đồng bộ dữ liệu" để hạn chế mất dữ liệu.</p>
+                        <h4 class="font-black text-orange-700 uppercase italic mb-6 flex items-center gap-2"><i data-lucide="alert-circle"></i> Lưu ý quan trọng</h4>
+                        <p class="text-sm font-semibold text-orange-900 italic leading-loose">Bật GPS, bật 3G/4G/Wifi ổn định. Sau mỗi thao tác công việc hãy bấm "Đồng bộ dữ liệu" để hạn chế mất dữ liệu.</p>
                     </div>
                 </div>
-                <div class="text-center text-center">
-                    <img src="login_ui.png" alt="Login UI" class="max-w-md mx-auto shadow-2xl">
+                <div class="text-center">
+                    <!-- [IMAGE] Login UI: images/login_ui.jpg -->
+                    <img src="images/login_ui.jpg" alt="[Hình minh họa giao diện Đăng nhập]" class="rounded-3xl shadow-lg mx-auto max-w-sm border border-slate-100">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CHẤM CÔNG -->
-    <section id="timekeep" class="py-24 bg-slate-50 px-4 text-center md:text-left">
+    <section id="timekeep" class="py-24 bg-slate-50 px-4">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-black text-center mb-16 uppercase italic text-center text-center text-center">CHẤM CÔNG TRÊN DMS</h2>
-            
-            <div class="flex justify-center mb-12">
-                <img src="timekeep_overview.png" alt="Tổng quan Chấm công" class="max-w-2xl border-4 border-white shadow-xl">
-            </div>
-
+            <h2 class="text-3xl font-black text-center mb-16 uppercase italic">CHẤM CÔNG TRÊN DMS</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="bg-white p-10 rounded-[48px] shadow-sm border border-green-100 flex flex-col items-center md:items-start text-center md:text-left text-center md:text-left">
+                <div class="bg-white p-10 rounded-[48px] shadow-sm border border-green-100">
                     <h3 class="font-bold text-green-700 mb-6 uppercase italic underline">Check-in (08:00)</h3>
                     <p class="text-xs text-slate-500 mb-4 italic">Trang chủ -> Chấm công -> BẮT ĐẦU.</p>
-                    <img src="checkin_screen.png" alt="Checkin Screen" class="max-w-md mx-auto md:mx-0">
+                    <!-- [IMAGE] Checkin UI: images/checkin_screen.jpg -->
+                    <img src="images/checkin_screen.jpg" alt="[Hình ảnh thao tác Check-in]" class="w-full border rounded-xl">
                 </div>
-                <div class="bg-white p-10 rounded-[48px] shadow-sm border border-red-100 flex flex-col items-center md:items-start text-center md:text-left text-center md:text-left text-center md:text-left">
+                <div class="bg-white p-10 rounded-[48px] shadow-sm border border-red-100">
                     <h3 class="font-bold text-red-700 mb-6 uppercase italic underline">Check-out (17:00)</h3>
                     <p class="text-xs text-slate-500 mb-4 italic">Màn hình Chấm công -> KẾT THÚC.</p>
-                    <img src="checkout_screen.png" alt="Checkout Screen" class="max-w-md mx-auto md:mx-0">
+                    <!-- [IMAGE] Checkout UI: images/checkout_screen.jpg -->
+                    <img src="images/checkout_screen.jpg" alt="[Hình ảnh thao tác Check-out]" class="w-full border rounded-xl">
                 </div>
+            </div>
+            <div class="mt-12 p-8 bg-slate-900 text-white rounded-[40px] text-center italic text-sm">
+                Hệ thống ghi nhận chấm công kèm vị trí/tọa độ làm việc thực tế. Sau khi thao tác xong, phải bấm nút <b>"Đồng bộ"</b>.
             </div>
         </div>
     </section>
 
     <!-- TẠO KHÁCH HÀNG MỚI -->
     <section id="customer" class="py-24 bg-white px-4">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-3xl font-black mb-16 uppercase italic tracking-widest text-center text-center text-center text-center">TẠO KHÁCH HÀNG MỚI</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                <!-- Quy trình thao tác (To hơn) -->
-                <div class="lg:col-span-2 space-y-12 text-center md:text-left">
-                    <h3 class="font-bold text-xl uppercase italic underline text-center md:text-left text-center md:text-left">1. Quy trình thao tác</h3>
-                    <div class="space-y-16 text-sm italic">
-                        <div class="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-black mb-16 text-center uppercase italic tracking-widest">TẠO KHÁCH HÀNG MỚI</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="space-y-12">
+                    <h3 class="font-bold text-xl uppercase italic underline">1. Quy trình thao tác</h3>
+                    <div class="space-y-8 text-sm italic">
+                        <div class="space-y-4">
                             <p><b>B1:</b> Viếng thăm -> Cài đặt (⚙️) -> Thêm khách hàng.</p>
-                            <img src="customer_step1.png" alt="Step 1" class="max-w-xl">
+                            <!-- [IMAGE] Create Customer Step 1: images/customer_step1.jpg -->
+                            <img src="images/customer_step1.jpg" alt="[Hình ảnh bước 1 tạo KH]" class="border shadow-sm max-w-[250px]">
                         </div>
-                        <div class="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
+                        <div class="space-y-4">
                             <p><b>B2:</b> Điền thông tin & Chụp ảnh trong/ngoài cửa hàng.</p>
-                            <img src="customer_step2.png" alt="Step 2" class="max-w-xl">
+                            <!-- [IMAGE] Create Customer Step 2: images/customer_step2.jpg -->
+                            <img src="images/customer_step2.jpg" alt="[Hình ảnh bước 2 tạo KH]" class="border shadow-sm max-w-[250px]">
                         </div>
-                        <div class="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
+                        <div class="space-y-4">
                             <p><b>B3:</b> Tab Vị trí -> Lấy địa chỉ -> Lưu vị trí.</p>
-                            <img src="customer_step3.png" alt="Step 3" class="max-w-xl">
+                            <!-- [IMAGE] Create Customer Step 3: images/customer_step3.jpg -->
+                            <img src="images/customer_step3.jpg" alt="[Hình ảnh bước 3 tạo KH]" class="border shadow-sm max-w-[250px]">
                         </div>
-                        <div class="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
+                        <div class="space-y-4">
                             <p><b>B4:</b> Tab Tuyến -> Gán tuyến -> Lưu.</p>
-                            <img src="customer_step4.png" alt="Step 4" class="max-w-xl">
+                            <!-- [IMAGE] Create Customer Step 4: images/customer_step4.jpg -->
+                            <img src="images/customer_step4.jpg" alt="[Hình ảnh bước 4 tạo KH]" class="border shadow-sm max-w-[250px]">
                         </div>
-                        <div class="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
+                        <div class="space-y-4">
                             <p><b>B5:</b> Cài đặt -> <b>Đồng bộ dữ liệu</b>.</p>
-                            <img src="customer_step5.png" alt="Step 5" class="max-w-xl">
+                            <!-- [IMAGE] Create Customer Step 5: images/customer_step5.jpg -->
+                            <img src="images/customer_step5.jpg" alt="[Hình ảnh bước 5 tạo KH]" class="border shadow-sm max-w-[250px]">
                         </div>
                     </div>
                 </div>
-
-                <!-- Quy định nghiêm ngặt (Nhỏ lại) -->
-                <div class="lg:col-span-1">
-                    <div class="bg-red-600 p-8 rounded-[48px] text-white shadow-2xl h-fit sticky top-24 italic leading-relaxed text-center md:text-left text-center md:text-left text-center md:text-left">
-                        <h3 class="text-lg font-black mb-6 uppercase italic text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left"><i data-lucide="alert-triangle"></i> Quy định nghiêm ngặt</h3>
-                        <ul class="space-y-4 text-[10px] italic text-left text-center md:text-left">
-                            <li>- Mã KH tự nhảy. NVBH chỉ khởi tạo <b>01 lần duy nhất</b>.</li>
-                            <li>- Địa chỉ phải đủ: số nhà, tên đường, phường, huyện, tỉnh.</li>
-                            <li>- Phải chụp chính diện thấy rõ tên, bảng hiệu, địa chỉ.</li>
-                            <li class="p-4 bg-white text-red-600 rounded-2xl font-bold text-[10px] text-center">
-                                Bắt buộc 3 trường bổ sung: (1) Nhu cầu, (2) Sản lượng tổng năm, (3) Sản lượng APSP năm & nguồn lấy hàng.
-                            </li>
-                        </ul>
-                    </div>
+                <div class="bg-red-600 p-10 rounded-[48px] text-white shadow-2xl h-fit sticky top-24 italic leading-relaxed">
+                    <h3 class="text-xl font-black mb-8 uppercase italic"><i data-lucide="alert-triangle"></i> Quy định nghiêm ngặt</h3>
+                    <ul class="space-y-6 text-xs italic">
+                        <li>- Mã KH tự nhảy. NVBH chỉ khởi tạo <b>01 lần duy nhất</b>.</li>
+                        <li>- Địa chỉ phải đủ: số nhà, tên đường, phường, huyện, tỉnh.</li>
+                        <li>- Phải chụp chính diện thấy rõ tên, bảng hiệu, địa chỉ.</li>
+                        <li class="p-4 bg-white text-red-600 rounded-3xl font-bold">
+                            Bắt buộc 3 trường bổ sung: (1) Nhu cầu, (2) Sản lượng tổng năm, (3) Sản lượng APSP năm & nguồn lấy hàng.
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- VIẾNG THĂM KHÁCH HÀNG -->
-    <section id="visit" class="py-24 bg-slate-900 text-white px-4 text-center md:text-left">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-black mb-16 uppercase italic underline decoration-green-500 tracking-tighter text-center text-center text-center">VIẾNG THĂM KHÁCH HÀNG</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
-                <div class="text-center md:text-left text-center md:text-left">
-                    <h3 class="text-xl font-bold mb-6 text-green-400 uppercase italic">1. Mục đích</h3>
-                    <ul class="text-sm italic space-y-2 mb-6 text-center md:text-left text-center md:text-left">
-                        <li>- Ghi tồn điểm bán</li>
-                        <li>- Lên đơn hàng</li>
-                        <li>- Ghi nhận vấn đề khách hàng</li>
-                    </ul>
-                    <img src="visit_purpose.png" alt="Visit Purpose" class="max-w-xl mx-auto md:mx-0 text-center md:text-left">
+    <section id="visit" class="py-24 bg-slate-900 text-white px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-black mb-16 text-center uppercase italic underline decoration-green-500">VIẾNG THĂM KHÁCH HÀNG</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="space-y-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-6 text-green-400 uppercase italic">1. Mục đích</h3>
+                        <ul class="text-sm italic space-y-2">
+                            <li>- Ghi tồn điểm bán</li>
+                            <li>- Lên đơn hàng</li>
+                            <li>- Ghi nhận vấn đề khách hàng</li>
+                        </ul>
+                        <!-- [IMAGE] Visit Purpose: images/visit_purpose.jpg -->
+                        <img src="images/visit_purpose.jpg" alt="[Hình ảnh mục đích viếng thăm]" class="mt-6 border border-slate-700 shadow-xl">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-6 text-blue-400 uppercase italic">2. Hướng dẫn thao tác</h3>
+                        <p class="text-sm italic mb-6">Sử dụng "Phễu" lọc hoặc "Công cụ" sắp xếp khoảng cách. Bấm <b>Checkin</b>.</p>
+                        <!-- [IMAGE] Visit Filter: images/visit_tools.jpg -->
+                        <img src="images/visit_tools.jpg" alt="[Hình ảnh công cụ lọc]" class="max-w-[250px] border border-slate-700">
+                    </div>
                 </div>
-                <div class="text-center md:text-left text-center md:text-left">
-                    <h3 class="text-xl font-bold mb-6 text-blue-400 uppercase italic">2. Hướng dẫn thao tác</h3>
-                    <p class="text-sm italic mb-6 text-center md:text-left text-center md:text-left">Sử dụng "Phễu" lọc hoặc "Công cụ" sắp xếp khoảng cách. Bấm <b>Checkin</b>.</p>
-                    <img src="visit_tools.png" alt="Visit Tools" class="max-w-xl mx-auto md:mx-0 text-center md:text-left text-center md:text-left text-center md:text-left">
-                </div>
-            </div>
-
-            <!-- Các trường hợp Đóng/Mở cửa chuyển xuống dưới để lấy diện tích to hơn -->
-            <div class="space-y-24">
-                <div class="bg-white text-slate-900 p-12 rounded-[56px] shadow-xl italic flex flex-col items-center md:items-start text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left">
-                    <h4 class="font-black text-red-600 uppercase mb-6 italic text-xl text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left">TRƯỜNG HỢP KH ĐÓNG CỬA</h4>
-                    <p class="text-sm mb-8 text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left">Chế độ "Đóng cửa" -> Tab "Hình ảnh" -> Chụp hiện trạng cửa đóng -> Check-out.</p>
-                    <img src="visit_closed_ui.png" alt="Closed UI" class="max-w-2xl mx-auto md:mx-0 text-center md:text-left">
-                </div>
-
-                <div class="bg-white text-slate-900 p-12 rounded-[56px] shadow-xl italic leading-relaxed text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left">
-                    <h4 class="font-black text-green-700 uppercase mb-10 italic text-xl text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left">TRƯỜNG HỢP KH MỞ CỬA</h4>
-                    <ul class="space-y-16">
-                        <li class="flex flex-col items-center md:items-start text-center md:text-left text-center md:text-left text-center md:text-left">
-                            <p class="text-lg font-bold mb-4 italic"><b>- Kiểm tồn:</b> Bấm Thêm SP -> Điền SL -> Lưu.</p>
-                            <img src="visit_stock.png" alt="Stock UI" class="max-w-2xl mx-auto md:mx-0 text-center md:text-left">
-                        </li>
-                        <li class="flex flex-col items-center md:items-start text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left">
-                            <p class="text-lg font-bold mb-4 italic"><b>- Chụp ảnh:</b> Tab Hình ảnh -> Chụp trưng bày -> Lưu.</p>
-                            <img src="visit_stock2.png" alt="Photo UI" class="max-w-2xl mx-auto md:mx-0 text-center md:text-left text-center md:text-left">
-                        </li>
-                        <li class="flex flex-col items-center md:items-start text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left">
-                            <p class="text-lg font-bold mb-4 italic"><b>- Ghi chú:</b> Cây bút -> Tab "Thêm mới" -> Gửi.</p>
-                            <img src="visit_stock3.png" alt="Note UI" class="max-w-2xl mx-auto md:mx-0 text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left">
-                        </li>
-                        <li class="flex flex-col items-center md:items-start text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left">
-                            <p class="text-lg font-bold mb-4 italic"><b>- Đặt hàng:</b> Đặt hàng -> Thêm SP -> Điền SL.</p>
-                            <img src="visit_order.png" alt="Order UI" class="max-w-2xl mx-auto md:mx-0 text-center md:text-left text-center md:text-left text-center md:text-left">
-                        </li>
-                        <li class="flex flex-col items-center md:items-start text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left">
-                            <p class="text-lg font-bold mb-4 italic"><b>- Khuyến mãi:</b> Nút Khuyến mãi -> Chọn SP & SL KM -> Cập nhật.</p>
-                            <img src="visit_order2.png" alt="Promo UI" class="max-w-2xl mx-auto md:mx-0 text-center md:text-left text-center md:text-left text-center md:text-left">
-                        </li>
-                    </ul>
+                <div class="space-y-12">
+                    <div class="bg-white text-slate-900 p-8 rounded-[48px] shadow-xl italic">
+                        <h4 class="font-black text-red-600 uppercase mb-4 italic text-sm">Trường hợp KH ĐÓNG CỬA</h4>
+                        <p class="text-xs mb-4">Chế độ "Đóng cửa" -> Tab "Hình ảnh" -> Chụp hiện trạng cửa đóng -> Check-out.</p>
+                        <!-- [IMAGE] Closed Scenario: images/visit_closed_ui.jpg -->
+                        <img src="images/visit_closed_ui.jpg" alt="[Hình ảnh thao tác KH đóng cửa]" class="border">
+                    </div>
+                    <div class="bg-white text-slate-900 p-8 rounded-[48px] shadow-xl italic leading-relaxed">
+                        <h4 class="font-black text-green-700 uppercase mb-4 italic text-sm">Trường hợp KH MỞ CỬA</h4>
+                        <ul class="text-xs space-y-6">
+                            <li>
+                                <b>- Kiểm tồn:</b> Thêm SP -> Điền SL -> Lưu.
+                                <!-- [IMAGE] Stock Count UI: images/visit_stock.jpg -->
+                                <img src="images/visit_stock.jpg" alt="[Hình ảnh kiểm tồn]" class="h-20 mt-2 border">
+                            </li>
+                            <li><b>- Chụp ảnh:</b> Tab Hình ảnh -> Chụp trưng bày -> Lưu.</li>
+                            <li><b>- Ghi chú:</b> Cây bút -> Tab "Thêm mới" -> Gửi.</li>
+                            <li>
+                                <b>- Đặt hàng:</b> Đặt hàng -> Thêm SP -> Điền SL.
+                                <!-- [IMAGE] Ordering UI: images/visit_order.jpg -->
+                                <img src="images/visit_order.jpg" alt="[Hình ảnh đơn hàng]" class="h-20 mt-2 border">
+                            </li>
+                            <li><b>- Khuyến mãi:</b> Nút Khuyến mãi -> Chọn SP & SL KM -> Cập nhật.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
-            <!-- Shape Đồng bộ to lên -->
-            <div class="mt-24 p-16 bg-orange-600 rounded-[64px] text-white text-center italic text-center text-center text-center">
-                <p class="text-xl font-black uppercase mb-8 tracking-widest text-center text-center">Thăm đúng tuyến phân bổ. Thao tác xong bắt buộc bấm <span class="underline">Đồng bộ dữ liệu</span>.</p>
-                <img src="sync_visit.png" alt="Sync Icon" class="mx-auto max-w-sm shadow-2xl">
+            <div class="mt-12 p-10 bg-orange-600 rounded-[48px] text-white text-center italic">
+                <p class="text-sm font-bold">Thăm đúng tuyến phân bổ. Thao tác xong bắt buộc bấm <b>Đồng bộ dữ liệu</b>.</p>
+                <!-- [IMAGE] Sync Icon: images/sync_visit.jpg -->
+                <img src="images/sync_visit.jpg" alt="[Hình ảnh biểu tượng đồng bộ]" class="mx-auto mt-6 h-16 shadow-lg">
             </div>
         </div>
     </section>
 
     <!-- FINISH BUTTON & QUIZ -->
-    <section class="py-24 bg-white text-center text-center">
-        <div class="max-w-2xl mx-auto px-4 text-center text-center text-center">
-            <h3 class="text-2xl font-black mb-8 uppercase italic text-center text-center text-center text-center">Sẵn sàng để hoàn thành khóa học?</h3>
-            <button onclick="startQuiz()" class="bg-slate-900 text-white px-12 py-5 rounded-full font-black text-lg shadow-2xl hover:scale-105 transition active:scale-95 uppercase tracking-widest text-center mx-auto text-center text-center">
+    <section class="py-24 bg-white text-center">
+        <div class="max-w-2xl mx-auto px-4">
+            <h3 class="text-2xl font-black mb-8 uppercase italic italic">Sẵn sàng để hoàn thành khóa học?</h3>
+            <button onclick="startQuiz()" class="bg-slate-900 text-white px-12 py-5 rounded-full font-black text-lg shadow-2xl hover:scale-105 transition active:scale-95 uppercase tracking-widest">
                 HOÀN THÀNH KHOÁ HỌC
             </button>
         </div>
     </section>
 
-    <footer class="py-16 bg-slate-50 border-t border-slate-100 text-center text-[10px] font-bold uppercase tracking-widest text-slate-400 italic text-center text-center text-center text-center text-center">
+    <footer class="py-16 bg-slate-50 border-t border-slate-100 text-center text-[10px] font-bold uppercase tracking-widest text-slate-400 italic">
         <p>&copy; 2025 AP SAIGON PETRO | TRUNG TÂM HỌC TẬP APSP</p>
     </footer>
 
     <!-- QUIZ MODAL -->
-    <div id="quiz-modal" class="quiz-modal flex-col text-center text-center">
-        <div class="flex justify-between items-center mb-8 text-center text-center text-center">
-            <span class="text-[10px] font-black uppercase text-green-600 tracking-widest text-center text-center text-center" id="quiz-progress">Câu 1/5</span>
-            <button onclick="closeQuiz()" class="text-slate-400 hover:text-red-500 transition text-center text-center text-center text-center"><i data-lucide="x" class="w-5 h-5"></i></button>
+    <div id="quiz-modal" class="quiz-modal flex-col">
+        <div class="flex justify-between items-center mb-8">
+            <span class="text-[10px] font-black uppercase text-green-600 tracking-widest" id="quiz-progress">Câu 1/5</span>
+            <button onclick="closeQuiz()" class="text-slate-400 hover:text-red-500 transition"><i data-lucide="x" class="w-5 h-5"></i></button>
         </div>
         <div id="quiz-question-container">
-            <h4 class="text-lg font-black text-slate-800 mb-8 leading-tight italic text-center md:text-left text-center text-center text-center text-center text-center" id="quiz-question-text"></h4>
+            <h4 class="text-lg font-black text-slate-800 mb-8 leading-tight italic" id="quiz-question-text"></h4>
             <div class="space-y-3" id="quiz-options"></div>
         </div>
-        <div id="quiz-result" class="hidden flex-col items-center text-center text-center text-center">
-            <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6 text-center text-center text-center text-center"><i data-lucide="award" class="w-10 h-10"></i></div>
-            <h4 class="text-2xl font-black mb-2 italic text-center text-center text-center" id="quiz-score-text"></h4>
-            <p class="text-slate-500 mb-8 text-sm italic text-center text-center text-center" id="quiz-score-desc"></p>
-            <button onclick="closeQuiz()" class="bg-green-600 text-white px-10 py-3 rounded-2xl font-bold shadow-lg text-center mx-auto text-center text-center text-center">Quay lại bài học</button>
+        <div id="quiz-result" class="hidden flex-col items-center text-center">
+            <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6"><i data-lucide="award" class="w-10 h-10"></i></div>
+            <h4 class="text-2xl font-black mb-2 italic" id="quiz-score-text"></h4>
+            <p class="text-slate-500 mb-8 text-sm italic" id="quiz-score-desc"></p>
+            <button onclick="closeQuiz()" class="bg-green-600 text-white px-10 py-3 rounded-2xl font-bold shadow-lg">Quay lại bài học</button>
         </div>
     </div>
 
     <!-- AI Floating Chatbot -->
     <div class="fixed bottom-24 right-8 z-[1000]">
-        <div id="ai-chat-window" class="ai-chat-window flex-col text-left text-center text-center">
-            <div class="bg-green-600 p-5 text-white flex justify-between items-center shadow-lg text-center text-center">
-                <div class="flex items-center gap-2 text-center text-center text-center text-center text-center text-center"><i data-lucide="sparkles" class="w-4 h-4"></i><span class="font-bold text-sm text-center text-center text-center text-center text-center text-center">Trợ lý APSP ✨</span></div>
+        <div id="ai-chat-window" class="ai-chat-window flex-col">
+            <div class="bg-green-600 p-5 text-white flex justify-between items-center">
+                <div class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4"></i><span class="font-bold text-sm">Trợ lý APSP ✨</span></div>
                 <button onclick="toggleChat()"><i data-lucide="x" class="w-4 h-4"></i></button>
             </div>
-            <div id="chat-messages" class="flex-1 p-5 space-y-4 overflow-y-auto text-xs text-slate-600 bg-slate-50 max-h-[350px] leading-relaxed italic text-center text-center text-center text-center">
-                <div class="bg-white p-4 rounded-3xl border shadow-sm text-center text-center text-center text-center">Xin chào! Tôi là Trợ lý học tập APSP. Bạn cần giải đáp gì về DMS không? ✨</div>
+            <div id="chat-messages" class="flex-1 p-5 space-y-4 overflow-y-auto text-xs text-slate-600 bg-slate-50 max-h-[350px] italic leading-relaxed">
+                <div class="bg-white p-4 rounded-3xl border shadow-sm">Xin chào! Tôi là Trợ lý học tập APSP. Bạn cần giải đáp gì về DMS không? ✨</div>
             </div>
             <div class="p-5 border-t flex gap-2 bg-white">
-                <input type="text" id="chat-input" placeholder="Hỏi về quy trình..." class="flex-1 p-3 border rounded-2xl text-[11px] outline-none">
-                <button onclick="sendMessage()" class="bg-green-600 text-white p-3 rounded-2xl shadow-lg transition active:scale-90 text-center text-center text-center text-center text-center"><i data-lucide="send" class="w-4 h-4"></i></button>
+                <input type="text" id="chat-input" placeholder="Hỏi quy trình..." class="flex-1 p-3 border rounded-2xl text-[11px] outline-none">
+                <button onclick="sendMessage()" class="bg-green-600 text-white p-3 rounded-2xl"><i data-lucide="send" class="w-4 h-4"></i></button>
             </div>
         </div>
-        <button onclick="toggleChat()" class="bg-white text-green-600 p-5 rounded-full shadow-2xl border-2 border-green-600 flex items-center justify-center hover:scale-110 transition active:scale-95 group text-center text-center text-center text-center">
-            <i data-lucide="message-circle" class="w-8 h-8 group-hover:rotate-12 transition"></i>
-            <span class="absolute -top-1 -right-1 bg-green-600 text-white text-[8px] font-bold px-2 py-0.5 rounded-full border-2 border-white text-center text-center text-center text-center text-center">AI</span>
+        <button onclick="toggleChat()" class="bg-white text-green-600 p-5 rounded-full shadow-2xl border-2 border-green-600 flex items-center justify-center hover:scale-110 transition group">
+            <i data-lucide="message-circle" class="w-8 h-8"></i>
+            <span class="absolute -top-1 -right-1 bg-green-600 text-white text-[8px] font-bold px-2 py-0.5 rounded-full">AI</span>
         </button>
     </div>
 
     <!-- Sticky Sync Button -->
-    <div class="fixed bottom-8 right-8 z-40 text-center text-center">
-        <button onclick="window.scrollTo(0, document.body.scrollHeight)" class="bg-orange-500 text-white p-5 rounded-full shadow-2xl flex items-center space-x-2 animate-sync hover:scale-110 transition active:scale-95 group text-center text-center text-center text-center text-center">
+    <div class="fixed bottom-8 right-8 z-40">
+        <button onclick="window.scrollTo(0, document.body.scrollHeight)" class="bg-orange-500 text-white p-5 rounded-full shadow-2xl flex items-center space-x-2 animate-sync hover:scale-110 transition active:scale-95 group">
             <i data-lucide="refresh-ccw" class="w-6 h-6 group-hover:rotate-90 transition duration-500"></i>
-            <span class="font-black text-[10px] uppercase pr-2 tracking-tighter italic text-center text-center text-center text-center text-center text-center">Đồng bộ</span>
+            <span class="font-black text-[10px] uppercase pr-2 tracking-tighter italic">Đồng bộ</span>
         </button>
     </div>
 
@@ -431,6 +410,7 @@
             document.getElementById('btn-ios').className = "px-8 py-3 rounded-xl font-bold text-sm transition-all " + (os === 'ios' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-400');
         }
 
+        // QUIZ DATA & LOGIC
         const questionBank = [
             { q: "NVBH cần Check-in vào thời gian nào?", a: ["07:30", "08:00", "08:30", "09:00"], c: 1, lv: "Biết" },
             { q: "NVBH được khởi tạo tối đa bao nhiêu lần cho 1 KH mới?", a: ["01 lần", "02 lần", "Vô hạn", "03 lần"], c: 0, lv: "Biết" },
@@ -449,7 +429,7 @@
             { q: "Nếu địa chỉ tự động sai, NVBH phải làm gì?", a: ["Để im", "Chỉnh tay đầy đủ số nhà, đường, phường...", "Xóa KH", "Ghi chú lại"], c: 1, lv: "Áp dụng" },
             { q: "Thao tác Lên đơn hàng (Sales Order) là bước thứ mấy?", a: ["Bước 1", "Bước 3", "Bước 5", "Bước 7"], c: 2, lv: "Biết" },
             { q: "Khi viếng thăm khách mở cửa, bước ghi tồn gọi là?", a: ["Checkin", "Stock count", "Checkout", "Order"], c: 1, lv: "Biết" },
-            { q: "NVBH muốn đổi tuyến bán hàng phải báo cáo with ai?", a: ["Không cần báo", "TP. GT", "TNBH (Quản lý trực tiếp)", "Đồng nghiệp"], c: 2, lv: "Áp dụng" },
+            { q: "NVBH muốn đổi tuyến bán hàng phải báo cáo với ai?", a: ["Không cần báo", "TP. GT", "TNBH (Quản lý trực tiếp)", "Đồng nghiệp"], c: 2, lv: "Áp dụng" },
             { q: "Hệ thống ghi nhận chấm công kèm yếu tố nào sau?", a: ["Vị trí/Tọa độ thực tế", "Giọng nói", "QR Code", "Vân tay"], c: 0, lv: "Hiểu" },
             { q: "Ba trường bổ sung bắt buộc bao gồm nguồn lấy hàng từ?", a: ["NPP hoặc Công ty", "Siêu thị", "Chợ", "Nước ngoài"], c: 0, lv: "Biết" }
         ];
@@ -475,7 +455,7 @@
             optionsDiv.innerHTML = '';
             q.a.forEach((opt, idx) => {
                 const btn = document.createElement('button');
-                btn.className = "w-full p-4 rounded-2xl border border-slate-200 text-left text-sm hover:bg-slate-50 transition font-medium italic text-center md:text-left text-center text-center text-center";
+                btn.className = "w-full p-4 rounded-2xl border border-slate-200 text-left text-sm hover:bg-slate-50 transition font-medium italic";
                 btn.innerText = opt;
                 btn.onclick = () => { if(idx === q.c) score++; currentStep++; if(currentStep < 5) showQuestion(); else showResult(); };
                 optionsDiv.appendChild(btn);
@@ -491,6 +471,7 @@
 
         function closeQuiz() { document.getElementById('quiz-modal').classList.remove('quiz-active'); }
 
+        // AI CALLS
         async function callGemini(prompt, systemPrompt = "") {
             const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
             try {
@@ -511,7 +492,6 @@
             document.getElementById('summary-result').innerHTML = summary.replace(/\n/g, '<br>');
             document.getElementById('summary-result').classList.remove('hidden');
             btn.disabled = false; btn.innerText = "Tóm tắt bài học nhanh ✨";
-            lucide.createIcons();
         }
 
         async function sendMessage() {
@@ -521,13 +501,13 @@
             if (!userMsg) return;
 
             const userDiv = document.createElement('div');
-            userDiv.className = 'bg-blue-600 text-white p-3 rounded-2xl rounded-tr-none self-end ml-auto max-w-[85%] text-[10px] font-bold italic shadow-sm text-center text-center text-center text-center text-center text-center';
+            userDiv.className = 'bg-blue-600 text-white p-3 rounded-2xl rounded-tr-none self-end ml-auto max-w-[85%] text-[10px] font-bold italic shadow-sm';
             userDiv.innerText = userMsg;
             chatMessages.appendChild(userDiv);
             input.value = '';
 
             const loadingDiv = document.createElement('div');
-            loadingDiv.className = 'bg-white p-3 rounded-2xl rounded-tl-none border shadow-sm max-w-[85%] text-[10px] italic text-center text-center text-center text-center text-center text-center';
+            loadingDiv.className = 'bg-white p-3 rounded-2xl rounded-tl-none border shadow-sm max-w-[85%] text-[10px] italic';
             loadingDiv.innerText = "...";
             chatMessages.appendChild(loadingDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
